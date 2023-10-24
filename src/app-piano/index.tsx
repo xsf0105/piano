@@ -4,22 +4,20 @@ import { connectStore } from 'gluang';
 import { store } from '../store';
 
 // 音符文件
-import notes from './notes.js'
+import notes from './notes'
 // 演示：月亮代表我的心
-import moon from './songs/moon.js'
+import moon from './songs/moon'
 // 演示：富士山下
-import fuji from './songs/fuji.js'
-// 演示：后来
-// import later from './songs/later.js'
+import fuji from './songs/fuji'
 // 蒲公英的约定
-import pgydyd from './songs/pgydyd.js'
+import pgydyd from './songs/pgydyd'
 // 小幸运
-import xxy from './songs/xxy.js'
+import xxy from './songs/xxy'
 // 音符和键盘的映射关系表
-import pianoKeys from './pianoKeys.js'
+import pianoKeys from './pianoKeys'
 
 @customElement({ tag: "app-piano", style })
-class MyComponent extends connectStore(QuarkElement) {
+class MyPiano extends connectStore(QuarkElement) {
 
   static use = [
     { count: 'count', song: 'song' }
@@ -105,6 +103,8 @@ class MyComponent extends connectStore(QuarkElement) {
   }
 
   playNote(name) {
+    console.log(notes, name, 999);
+
     console.log(notes[name])
     if (!notes[name]["isPlay"]) {
       // console.log(name)
@@ -457,11 +457,5 @@ class MyComponent extends connectStore(QuarkElement) {
         </div>
       </>
     );
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "my-component": MyComponent
   }
 }

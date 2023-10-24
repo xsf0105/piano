@@ -4,9 +4,9 @@ import { connectStore } from 'gluang';
 import { store } from '../store';
 
 // 演示：月亮代表我的心
-import moon from '../app-piano/songs/moon.js'
+import moon from '../app-piano/songs/moon'
 // 按键和音符的关系
-import keys from './keys.js'
+import keys from './keys'
 
 @customElement({ tag: "app-footer", style })
 class MyFooter extends connectStore(QuarkElement) {
