@@ -12,20 +12,21 @@ import keys from './keys'
 class MyFooter extends connectStore(QuarkElement) {
 
   componentDidMount() {
-    this.data = {
-      title: "Quarkc",
-      song: [],
-      keys
-    }
-
+    // TODO: gluang 需要修改，调用 setSong 的时候，没有重新渲染 render ！！！
     store.setSong(moon)
   }
 
+  handle2Melody() {
+    console.log(22);
+    store.setSong(moon)
+    console.log(store.song, 99999);
+  }
+
   render() {
-    console.log(store, 122);
+    console.log(store.song, 122);
 
     return (
-<div class="app-footer">
+<div class="app-footer" onClick={this.handle2Melody.bind(this)}>
         <hr class="mt-5" />
         <div class="row mt-5">
             <div class="col">
@@ -36,18 +37,29 @@ class MyFooter extends connectStore(QuarkElement) {
                     </p>
                     <p>你可以点击键盘依顺序按以下键，控制好节奏演奏属于你的旋律，下面是一首钢琴曲的例子:</p>
                     <p class="mt-4">Enjoy it!</p>
-                    {store.song.map((item)=>{if(item[0].note){return(
-                    <p class="mt-3 code">
-                        <code class="p-2 text-dark">{
-                            item.map((item2)=>{
-                                if(item2.note){
-                                    return(
-                                        <span style={{color:store.data.count===item2.index?'red':'black'}}>{this.data.keys[item2.note]},</span>
-                                    )
-                                }
-                            })}
-                        </code>
-                    </p>)}})}
+            {store.song}
+                    {
+                      store.song.map((item)=>{
+                        console.log(item, 22);
+
+                      if(item[0].note){
+                        return(
+                          <p class="mt-3 code">
+                            <code class="p-2 text-dark">{
+                                item.map((item2)=>{
+                                    if(item2.note){
+                                        return(
+                                            <span style={{color:store.count===item2.index?'red':'black'}}>
+                                              {keys[item2.note]},
+                                            </span>
+                                        )
+                                    }
+                                })}
+                            </code>
+                          </p>
+                        )
+                      }})
+                    }
                 </div>
             </div>
         </div>
