@@ -1,0 +1,20 @@
+{
+	"editor.codeActionsOnSave": {
+  	"source.fixAll": true
+  },
+  "eslint.options": {
+    "configFile": "./eslintrc.cjs",
+    "rules": {
+      "no-restricted-syntax": "off",
+      "guard-for-in": "off"
+    }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "html",
+    "typescript",
+    "typescriptreact"
+  ]
+}
