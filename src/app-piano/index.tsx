@@ -99,10 +99,10 @@ class MyPiano extends connectStore(QuarkElement) {
     console.log('reset')
   }
 
+  // 按钢琴键
   playNote(name) {
     console.log(notes, name, 999);
-
-    console.log(notes[name])
+    // console.log(notes[name])
     if (!notes[name]["isPlay"]) {
       // console.log(name)
       const audio = this[name].childNodes[1]
@@ -112,7 +112,7 @@ class MyPiano extends connectStore(QuarkElement) {
         this[name].getAttribute('data-type') === 'white' ? this[name].style.background = `linear-gradient(-30deg, #f8f8f8, #fff)` : this[name].style.background = `linear-gradient(-20deg, #222, #000, #222)`
         // clearInterval(timer)
         clearTimeout(timer)
-      }, 500)
+      }, 100)
 
       audio.currentTime = 0
       audio.play()
@@ -122,7 +122,7 @@ class MyPiano extends connectStore(QuarkElement) {
       const isPlay = setTimeout(() => {
         notes[name]["isPlay"] = false
         clearTimeout(isPlay)
-      }, 500)
+      }, 100)
     }
   }
 
@@ -139,7 +139,6 @@ class MyPiano extends connectStore(QuarkElement) {
         switch (typeof song[offset]) {
           // 简谱2演奏方法 根据 ++12345--6. 简单旋律情况
           case 'string':
-            // eslint-disable-next-line no-case-declarations
             const letters = song[offset].match(/[0-9]/g)
             switch (letters.length) {
               case 1:
@@ -169,13 +168,12 @@ class MyPiano extends connectStore(QuarkElement) {
           const timer = setTimeout(() => {
             clearInterval(timer)
             resolve()
-          }, time)
+          }, 0)
         })
         offset++
-        // console.log(offset)
-        // console.log(store.count)
-        // 这里太久都忘了为什么 offset 是怎么变的了，用强制更新让 count 更新来激活暂停按钮吧
-        this.update()
+
+        // this.update()
+
         // 自定义事件，跟下面底部的音符自动跳动结合
         store.add()
         playSong()
@@ -230,7 +228,7 @@ class MyPiano extends connectStore(QuarkElement) {
       } else {
         clearInterval(this.interval)
       }
-    }, 500)
+    }, 0)
   }
 
   // 处理多音
