@@ -101,7 +101,7 @@ class MyPiano extends connectStore(QuarkElement) {
 
   // 按钢琴键
   playNote(name) {
-    // console.log(notes, name, 999);
+    console.log(name);
     if (!notes[name]["isPlay"]) {
       const audio = this[name].childNodes[1]
 
