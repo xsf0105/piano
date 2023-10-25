@@ -113,8 +113,10 @@ class MyPiano extends connectStore(QuarkElement) {
         // clearInterval(timer)
         clearTimeout(timer)
       }, 500)
+
       audio.currentTime = 0
       audio.play()
+
       // 设置对应的音符为正在播放，相当于节流的开关
       notes[name]["isPlay"] = true
       const isPlay = setTimeout(() => {

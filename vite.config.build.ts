@@ -30,14 +30,19 @@
 
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import copyPlugin from 'rollup-plugin-copy'
 
 export default defineConfig({
   base: './',
   build: {
     rollupOptions: {
+      plugins: [
+        copyPlugin({
+          targets: [{ src: 'samples', dest: 'dist' }], // 将文件复制到 dist/healthcheck, vite会自动复制到dist目录
+        }),
+      ],
       input: {
         main: resolve(__dirname, 'index.html'),
-        // nested: resolve(__dirname, 'nested/index.html'),
       },
     },
   },
