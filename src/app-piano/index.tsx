@@ -101,18 +101,15 @@ class MyPiano extends connectStore(QuarkElement) {
 
   // 按钢琴键
   playNote(name) {
-    console.log(notes, name, 999);
-    // console.log(notes[name])
+    // console.log(notes, name, 999);
     if (!notes[name]["isPlay"]) {
-      // console.log(name)
       const audio = this[name].childNodes[1]
       this[name].style.background = `linear-gradient(-20deg, #3330fb, #000, #222)`
+      // this[name].style.background = `linear-gradient(-20deg, #3330fb, #000, #222);`
       const timer = setTimeout(() => {
-        // console.log(this[name].getAttribute('data-type'))
         this[name].getAttribute('data-type') === 'white' ? this[name].style.background = `linear-gradient(-30deg, #f8f8f8, #fff)` : this[name].style.background = `linear-gradient(-20deg, #222, #000, #222)`
-        // clearInterval(timer)
         clearTimeout(timer)
-      }, 100)
+      }, 200)
 
       audio.currentTime = 0
       audio.play()
@@ -122,7 +119,7 @@ class MyPiano extends connectStore(QuarkElement) {
       const isPlay = setTimeout(() => {
         notes[name]["isPlay"] = false
         clearTimeout(isPlay)
-      }, 100)
+      }, 200)
     }
   }
 
@@ -168,7 +165,7 @@ class MyPiano extends connectStore(QuarkElement) {
           const timer = setTimeout(() => {
             clearInterval(timer)
             resolve()
-          }, 0)
+          }, time)
         })
         offset++
 
@@ -228,7 +225,7 @@ class MyPiano extends connectStore(QuarkElement) {
       } else {
         clearInterval(this.interval)
       }
-    }, 0)
+    }, 50)
   }
 
   // 处理多音
