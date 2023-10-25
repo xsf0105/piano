@@ -45,11 +45,3 @@ npm start
 
 # 在浏览器访问 http://localhost:3000
 ```
-
-## Notes
-
-Gluang is fork from [piano](https://github.com/Wscats/piano) and I rewrote it with Quarkc and gluang.
-
-###### Changes in this fork
-- Fix some bug, eg.
--
