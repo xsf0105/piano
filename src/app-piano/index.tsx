@@ -19,11 +19,8 @@ import pianoKeys from './pianoKeys'
 @customElement({ tag: "app-piano", style })
 class MyPiano extends connectStore(QuarkElement) {
 
-  static use = [
-    { count: 'count', song: 'song' }
-  ]
-
   setSong = (song) => store.setSong(song)
+
   setCount = (count) => store.setSong(count)
 
   componentDidMount() {
@@ -115,7 +112,7 @@ class MyPiano extends connectStore(QuarkElement) {
         this[name].getAttribute('data-type') === 'white' ? this[name].style.background = `linear-gradient(-30deg, #f8f8f8, #fff)` : this[name].style.background = `linear-gradient(-20deg, #222, #000, #222)`
         // clearInterval(timer)
         clearTimeout(timer)
-      }, 1000)
+      }, 500)
       audio.currentTime = 0
       audio.play()
       // 设置对应的音符为正在播放，相当于节流的开关
@@ -440,10 +437,12 @@ class MyPiano extends connectStore(QuarkElement) {
 
           <div class="text-center">
             <p>Click the button below to let the piano play the song automatically:</p>
-            <p>点击下面按钮让钢琴自动演奏歌曲:{store.count>0?'1':'0'}</p>
+
+            <p>点击下面按钮让钢琴自动演奏歌曲:{store.count > 0 ? '1' : '0'}</p>
+
             <div>
-              {store.count>0?(
-              <button onClick={this.stopSong.bind(this)} class="btn btn-outline-info btn-stop">Stop & 暂停</button>
+              {store.count > 0 ?(
+              <button onClick={this.stopSong.bind(this)} class="btn btn-outline-info btn-stop">Stop 暂停</button>
               ):(
               <div>
                 <button onClick={this.playSong.bind(this,moon)} class="btn btn-outline-info">月亮代表我的心</button>

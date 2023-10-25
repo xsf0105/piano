@@ -4,7 +4,7 @@ export default {
   A4: { url: "./samples/piano/a80.mp3", isPlay: false },
   A5: { url: "./samples/piano/a74.mp3", isPlay: false },
   A6: { url: "./samples/piano/a66.mp3", isPlay: false },
-  'A#2': { url: "./samples/piano/b69.mp3", isPlay: false }, // 少一个音
+  'A#2': { url: "./samples/piano/b54.mp3", isPlay: false }, // 少一个音，此处已修复
   'A#3': { url: "./samples/piano/b69.mp3", isPlay: false },
   'A#4': { url: "./samples/piano/b80.mp3", isPlay: false },
   'A#5': { url: "./samples/piano/b74.mp3", isPlay: false },

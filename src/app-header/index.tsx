@@ -17,10 +17,10 @@ class MyComponent extends connectStore(QuarkElement) {
                     <p>An interactive piano keyboard for Quarkc. Supports custom sounds,<br class="d-none d-sm-block" />
                         touch/click/keyboard events, and fully auto play song.</p>
                     <div class="mt-4">
-                        <a class="btn btn-outline-light btn-lg" href="https://github.com/Wscats/piano">View docs on
+                        <a class="btn btn-outline-light btn-lg" href="https://github.com/xsf0105/piano">View docs on
                             Github
                         </a>
-                        <a class="btn btn-outline-light btn-lg" href="https://github.com/Wscats/piano">查看该项目Github地址
+                        <a class="btn btn-outline-light btn-lg" href="https://github.com/xsf0105/piano">查看该项目Github地址
                         </a>
                     </div>
                 </div>

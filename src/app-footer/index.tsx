@@ -13,13 +13,16 @@ class MyFooter extends connectStore(QuarkElement) {
 
   componentDidMount() {
     // TODO: gluang 需要修改，调用 setSong 的时候，没有重新渲染 render ！！！
-    store.setSong(moon)
+    // store.setSong(moon)
+
+    // console.log('didMount', store.song);
   }
 
   handle2Melody() {
-    console.log(22);
     store.setSong(moon)
-    console.log(store.song, 99999);
+    console.log('click', store.song);
+    // this.update()
+    // linear-gradient(-20deg, rgb(51, 48, 251), rgb(0, 0, 0), rgb(34, 34, 34))
   }
 
   render() {
@@ -67,7 +70,7 @@ class MyFooter extends connectStore(QuarkElement) {
             <div class="container">
                 <div class="text-center text-secondary">Made with <span role="img"
                         aria-label="keyboard emoji">🎵</span>by <a class="text-secondary"
-                        href="https://github.com/Wscats"><strong>@xsf0105</strong></a></div>
+                        href="https://github.com/xsf0105"><strong>@xsf0105</strong></a></div>
             </div>
         </div>
     </div>
