@@ -1,12 +1,9 @@
 import { QuarkElement, customElement } from "quarkc"
 import style from "./index.less?inline"
-import { connectStore } from 'gluang';
-import { store } from '../store';
 
 
 @customElement({ tag: "app-header", style })
-class MyComponent extends connectStore(QuarkElement) {
-
+class MyComponent extends QuarkElement {
   render() {
     return (
       <div>

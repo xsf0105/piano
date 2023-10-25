@@ -12,24 +12,12 @@ import keys from './keys'
 class MyFooter extends connectStore(QuarkElement) {
 
   componentDidMount() {
-    // TODO: gluang 需要修改，调用 setSong 的时候，没有重新渲染 render ！！！
-    // store.setSong(moon)
-
-    // console.log('didMount', store.song);
-  }
-
-  handle2Melody() {
     store.setSong(moon)
-    console.log('click', store.song);
-    // this.update()
-    // linear-gradient(-20deg, rgb(51, 48, 251), rgb(0, 0, 0), rgb(34, 34, 34))
   }
 
   render() {
-    console.log(store.song, 122);
-
     return (
-<div class="app-footer" onClick={this.handle2Melody.bind(this)}>
+<div class="app-footer">
         <hr class="mt-5" />
         <div class="row mt-5">
             <div class="col">
@@ -40,11 +28,8 @@ class MyFooter extends connectStore(QuarkElement) {
                     </p>
                     <p>你可以点击键盘依顺序按以下键，控制好节奏演奏属于你的旋律，下面是一首钢琴曲的例子:</p>
                     <p class="mt-4">Enjoy it!</p>
-            {store.song}
                     {
                       store.song.map((item)=>{
-                        console.log(item, 22);
-
                       if(item[0].note){
                         return(
                           <p class="mt-3 code">
