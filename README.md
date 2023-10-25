@@ -13,7 +13,7 @@
 
 <img width="250px" align="right" src="./public/piano.gif"/>
 
-> 体验地址：
+> 体验地址：https://xsf0105.github.io/piano/
 
 
 > 项目地址： https://github.com/xsf0105/piano
@@ -45,3 +45,11 @@ npm start
 
 # 在浏览器访问 http://localhost:3000
 ```
+
+## Notes
+
+Gluang is fork from [piano](https://github.com/Wscats/piano) and I rewrote it with Quarkc and gluang.
+
+###### Changes in this fork
+- Fix some bug, eg.
+-
