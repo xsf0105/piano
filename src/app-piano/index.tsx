@@ -108,7 +108,8 @@ class MyPiano extends connectStore(QuarkElement) {
       this[name].style.background = `linear-gradient(-20deg, #3330fb, #000, #222)`
 
       const timer = setTimeout(() => {
-        this[name].getAttribute('data-type') === 'white' ? this[name].style.background = `linear-gradient(-30deg, #f8f8f8, #fff)` : this[name].style.background = `linear-gradient(-20deg, #222, #000, #222)`
+        this[name].getAttribute('data-type') === 'white' ? this[name].style.background = `linear-gradient(-30deg, #f8f8f8, #fff)` :
+        this[name].style.background = `linear-gradient(-20deg, #222, #000, #222)`
         clearTimeout(timer)
       }, 150)
 
