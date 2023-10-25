@@ -104,12 +104,13 @@ class MyPiano extends connectStore(QuarkElement) {
     // console.log(notes, name, 999);
     if (!notes[name]["isPlay"]) {
       const audio = this[name].childNodes[1]
+
       this[name].style.background = `linear-gradient(-20deg, #3330fb, #000, #222)`
-      // this[name].style.background = `linear-gradient(-20deg, #3330fb, #000, #222);`
+
       const timer = setTimeout(() => {
         this[name].getAttribute('data-type') === 'white' ? this[name].style.background = `linear-gradient(-30deg, #f8f8f8, #fff)` : this[name].style.background = `linear-gradient(-20deg, #222, #000, #222)`
         clearTimeout(timer)
-      }, 200)
+      }, 150)
 
       audio.currentTime = 0
       audio.play()
@@ -119,7 +120,7 @@ class MyPiano extends connectStore(QuarkElement) {
       const isPlay = setTimeout(() => {
         notes[name]["isPlay"] = false
         clearTimeout(isPlay)
-      }, 200)
+      }, 150)
     }
   }
 
