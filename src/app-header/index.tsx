@@ -7,7 +7,7 @@ class MyComponent extends QuarkElement {
   render() {
     return (
       <div>
-        <div style="background: rgb(51, 51, 51) none repeat scroll 0% 0%;">
+        <div style="background: black;">
             <div class="container">
                 <div class="text-sm-center text-white py-5">
                     <h1>Quarkc Piano</h1>
